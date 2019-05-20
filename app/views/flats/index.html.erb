@@ -1,0 +1,47 @@
+<div class="navbar bg-light border">
+  <p>Simple Airbnb</p>
+  <div class="d-flex">
+    <form class="form-inline">
+      <div class="form-group mx-sm-3 mb-2 flex-row-reverse">
+        <label for="search" class="sr-only">Search</label>
+        <input type="text" class="form-control" id="search" placeholder="Search">
+      </div>
+      <div>
+        <button type="submit" class="btn btn-outline-success mb-2">Search</button>
+      </div>
+    </form>
+    <div class="btn btn-outline-primary ml-3 mb-2">Add Flat</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="my-3">
+    <h1>All our Flats ()</h1>
+    <p>You searched for . We found 4 flats out of our 4 on our website.</p>
+  </div>
+  <div>
+    <div class="cards d-flex">
+      <% @flats.each do |flat| %>
+<!--       <img src="https://source.unsplash.com/collection/3759874" alt="">
+ -->        <div class="card w-50 ml-3 shadow-sm border-0">
+          <div class="p-3 bg-light">
+            <h4><%= flat.name %></h4>
+            <p><%= flat.description %></p>
+            <div>
+              <i class="fas fa-user-friends"></i> <%= flat.number_of_guests %>
+              <i class="fas fa-euro-sign"></i> <%= flat.price_per_night %>
+            </div>
+          </div>
+
+          <div class="card-body border-top">
+            <a href="#" class="card-link">More info</a>
+            <a href="#" class="card-link">Edit</a>
+            <a href="#" class="card-link">Remove</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
